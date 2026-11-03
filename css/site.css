@@ -95,7 +95,8 @@ section { padding: 56px 0; }
 
 /* ---------- Cards and grids ---------- */
 .grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
-.grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 720px) { .grid-2 { grid-template-columns: 1fr; } }
 .card {
   background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 24px; display: flex; flex-direction: column;
@@ -159,3 +160,19 @@ section { padding: 56px 0; }
   .hero { padding: 48px 0 44px; }
   .callout { padding: 28px 20px; }
 }
+
+/* ---------- Case studies ---------- */
+.case-link { text-decoration: none; color: var(--ink); transition: border-color .15s; }
+.case-link:hover { border-color: var(--blue); color: var(--ink); }
+.case-link h3 { color: var(--blue); }
+.case-link p { color: var(--muted); }
+.case-list { max-width: 50rem; }
+.case { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius);
+        padding: 32px; margin-bottom: 28px; scroll-margin-top: 16px; }
+.case h2 { margin-top: .2em; }
+.case h3 { font-size: 1.05rem; margin-top: 1.4em; }
+.case ul { padding-left: 1.2em; }
+.case-pain { font-weight: 600; color: var(--muted); }
+.case-tools { margin-top: 1.4em; padding-top: 1em; border-top: 1px solid var(--line); color: var(--muted); font-size: .95rem; }
+.case-top { font-size: .9rem; margin: 0; }
+@media (max-width: 600px) { .case { padding: 22px 18px; } }

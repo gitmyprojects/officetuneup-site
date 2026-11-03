@@ -283,7 +283,12 @@ about = f'''    <div class="page-title">
         </ul>
 
         <h2>What I work with</h2>
-        <p>Power Apps, Power Automate, Dataverse, Dynamics 365, SharePoint, Power BI and Azure Functions. Process advice applies to any tool; the hands-on building is in Microsoft 365 and Dynamics 365.</p>
+        <ul>
+          <li><strong>Everyday Microsoft 365 apps:</strong> Word, Excel, Outlook, Teams, SharePoint and OneDrive</li>
+          <li><strong>Automation, apps and reporting:</strong> Power Apps, Power Automate, Dataverse, Power BI and Azure Functions</li>
+          <li><strong>Business systems:</strong> Dynamics 365, including Sales and Business Central</li>
+        </ul>
+        <p>Process advice applies to any tool; the hands-on building is in Microsoft 365 and Dynamics 365.</p>
       </div>
     </section>
 

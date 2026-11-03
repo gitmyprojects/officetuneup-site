@@ -200,3 +200,35 @@ section { padding: 56px 0; }
 .shot { margin: 1.4em 0; }
 .shot img { display: block; width: auto; max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 6px; background: var(--white); }
 .shot figcaption { font-size: .9rem; color: var(--muted); margin-top: 6px; }
+
+/* ---------- Case study index ---------- */
+.filter { margin-top: 24px; }
+.filter-label { font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font: inherit; font-size: .92rem; font-weight: 600; padding: 7px 14px; border-radius: 999px;
+        border: 1.5px solid var(--line); background: var(--white); color: var(--ink); cursor: pointer; }
+.chip:hover { border-color: var(--blue); color: var(--blue); }
+.chip[aria-pressed="true"] { background: var(--blue); border-color: var(--blue); color: var(--white); }
+.chip:focus-visible { outline: 3px solid #8fb5e0; outline-offset: 2px; }
+
+.case-group { margin-bottom: 44px; }
+.case-group:last-of-type { margin-bottom: 0; }
+.case-group h2 { margin-bottom: 18px; }
+.case-card h3 { font-size: 1.15rem; }
+.case-card p { color: var(--muted); margin-bottom: 12px; }
+.case-card[hidden], .case-group[hidden] { display: none; }
+.tool-tags { list-style: none; margin: auto 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.tool-tags li { font-size: .78rem; color: var(--muted); border: 1px solid var(--line); border-radius: 4px; padding: 2px 8px; }
+.read-more { margin-top: 14px; font-weight: 600; color: var(--blue); }
+.read-more::after { content: " \2192"; }
+.soon { margin-top: 14px; font-size: .9rem; color: var(--muted); font-style: italic; }
+.no-results { color: var(--muted); }
+
+/* ---------- Case study page ---------- */
+.case-wrap { max-width: 50rem; }
+.crumb { font-size: .92rem; color: var(--muted); margin-bottom: 14px; }
+.case-page h2 { font-size: 1.3rem; margin-top: 1.6em; }
+.case-page h2:first-child { margin-top: 0; }
+.case-page ul { padding-left: 1.2em; }
+.shot-pair .pair { display: flex; flex-wrap: wrap; gap: 16px; }
+.shot-pair .pair img { flex: 1 1 200px; max-width: 280px; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 6px; }

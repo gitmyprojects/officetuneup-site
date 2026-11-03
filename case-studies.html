@@ -50,15 +50,26 @@
         <div class="note">
           <p><strong>Real-world projects</strong> were built for, and used at, a working business. <strong>Demo company</strong> projects were built in Lumen Photonics, a sample manufacturer I created in Microsoft 365 to show a complete system end to end. Company names, customers and figures are left out or blurred.</p>
         </div>
-        <div class="filter" role="group" aria-labelledby="filter-label">
-          <p id="filter-label" class="filter-label">Filter by tool</p>
+        <div class="filter" role="group" aria-labelledby="filter-group-label">
+          <p id="filter-group-label" class="filter-label">Filter by problem</p>
           <div class="chips">
-            <button type="button" class="chip" data-tool="all" aria-pressed="true">All</button>
-            <button type="button" class="chip" data-tool="Power Apps" aria-pressed="false">Power Apps</button>
-            <button type="button" class="chip" data-tool="Power Automate" aria-pressed="false">Power Automate</button>
-            <button type="button" class="chip" data-tool="Power BI" aria-pressed="false">Power BI</button>
-            <button type="button" class="chip" data-tool="SharePoint" aria-pressed="false">SharePoint</button>
-            <button type="button" class="chip" data-tool="Dynamics 365" aria-pressed="false">Dynamics 365</button>
+            <button type="button" class="chip" data-group="all" aria-pressed="true">All problems</button>
+            <button type="button" class="chip" data-group="approvals-stuck" aria-pressed="false">Approvals stall and steps get skipped</button>
+            <button type="button" class="chip" data-group="documents" aria-pressed="false">Documents are hard to find</button>
+            <button type="button" class="chip" data-group="double-entry" aria-pressed="false">Typing the same thing twice</button>
+            <button type="button" class="chip" data-group="field" aria-pressed="false">Paperwork in the field</button>
+            <button type="button" class="chip" data-group="too-late" aria-pressed="false">Finding out too late</button>
+          </div>
+        </div>
+        <div class="filter" role="group" aria-labelledby="filter-tool-label">
+          <p id="filter-tool-label" class="filter-label">Filter by tool</p>
+          <div class="chips">
+            <button type="button" class="chip" data-tool="all" aria-pressed="true">All tools</button>
+            <button type="button" class="chip t-pp" data-tool="Power Apps" aria-pressed="false">Power Apps</button>
+            <button type="button" class="chip t-pp" data-tool="Power Automate" aria-pressed="false">Power Automate</button>
+            <button type="button" class="chip t-bi" data-tool="Power BI" aria-pressed="false">Power BI</button>
+            <button type="button" class="chip t-sp" data-tool="SharePoint" aria-pressed="false">SharePoint</button>
+            <button type="button" class="chip t-d365" data-tool="Dynamics 365" aria-pressed="false">Dynamics 365</button>
           </div>
         </div>
       </div>
@@ -67,49 +78,49 @@
     <section class="case-groups">
       <div class="wrap">
       <div class="case-group" id="approvals-stuck">
-        <h2>Approvals get stuck</h2>
+        <h2>Approvals stall and steps get skipped</h2>
         <div class="grid grid-2">
-          <a class="card case-card case-link" href="/case-studies/approvals.html" data-tools="SharePoint|Power Automate"><span class="tag green">Demo company</span><h3>Approvals sit in someone's inbox</h3><p>Requests route themselves to the right approver, and every decision is recorded.</p><ul class="tool-tags" aria-label="Tools used"><li>SharePoint</li><li>Power Automate</li></ul><span class="read-more">Read the case study</span></a>
-          <div class="card case-card" data-tools="Power Automate"><span class="tag">Real-world project</span><h3>Equipment gets retired without anyone signing off</h3><p>A retirement request now waits for approval, and the requester hears back in Teams.</p><ul class="tool-tags" aria-label="Tools used"><li>Power Automate</li></ul><span class="soon">Write-up coming soon</span></div>
-          <div class="card case-card" data-tools="SharePoint|Power Automate"><span class="tag green">Demo company</span><h3>People skip steps in the process</h3><p>The rules are enforced automatically, and someone is alerted if the check ever fails.</p><ul class="tool-tags" aria-label="Tools used"><li>SharePoint</li><li>Power Automate</li></ul><span class="soon">Write-up coming soon</span></div>
-          <div class="card case-card" data-tools="Dynamics 365"><span class="tag">Real-world project</span><h3>Every salesperson runs deals their own way</h3><p>A guided sales path collects the right information at each stage before a deal moves on.</p><ul class="tool-tags" aria-label="Tools used"><li>Dynamics 365</li></ul><span class="soon">Write-up coming soon</span></div>
+          <a class="card case-card case-link" href="/case-studies/approvals.html" data-tools="SharePoint|Power Automate"><span class="tag green">Demo company</span><h3>Approvals sit in someone's inbox</h3><p>Requests route themselves to the right approver, and every decision is recorded.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-sp">SharePoint</li><li class="t-pp">Power Automate</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/equipment-retirement.html" data-tools="Power Automate"><span class="tag">Real-world project</span><h3>Equipment gets retired without anyone signing off</h3><p>A retirement request now waits for approval, and the requester hears back in Teams.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-pp">Power Automate</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/skipped-steps.html" data-tools="SharePoint|Power Automate"><span class="tag green">Demo company</span><h3>People skip steps in the process</h3><p>The rules are enforced automatically, and someone is alerted if the check ever fails.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-sp">SharePoint</li><li class="t-pp">Power Automate</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/sales-process.html" data-tools="Dynamics 365|Power Automate"><span class="tag">Real-world project</span><h3>Every salesperson runs deals their own way</h3><p>A guided sales path collects the right information at each stage before a deal moves on.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-d365">Dynamics 365</li><li class="t-pp">Power Automate</li></ul><span class="read-more">Read the case study</span></a>
         </div>
       </div>
       <div class="case-group" id="documents">
         <h2>Documents are hard to find</h2>
         <div class="grid grid-2">
-          <a class="card case-card case-link" href="/case-studies/documents.html" data-tools="SharePoint"><span class="tag green">Demo company</span><h3>Staff use outdated procedures</h3><p>One library where everyone sees only the current approved version.</p><ul class="tool-tags" aria-label="Tools used"><li>SharePoint</li></ul><span class="read-more">Read the case study</span></a>
-          <div class="card case-card" data-tools="Power Apps|SharePoint"><span class="tag">Real-world project</span><h3>Employees can't find the latest policy or form</h3><p>Announcements, policies, benefits and forms in one place on every employee's phone.</p><ul class="tool-tags" aria-label="Tools used"><li>Power Apps</li><li>SharePoint</li></ul><span class="soon">Write-up coming soon</span></div>
-          <div class="card case-card" data-tools="SharePoint"><span class="tag green">Demo company</span><h3>Company news gets lost in email</h3><p>One home page for news, announcements, key dates and live plant status.</p><ul class="tool-tags" aria-label="Tools used"><li>SharePoint</li></ul><span class="soon">Write-up coming soon</span></div>
+          <a class="card case-card case-link" href="/case-studies/documents.html" data-tools="SharePoint"><span class="tag green">Demo company</span><h3>Staff use outdated procedures</h3><p>One library where everyone sees only the current approved version.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-sp">SharePoint</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/employee-documents.html" data-tools="Power Apps|SharePoint"><span class="tag">Real-world project</span><h3>Employees can't find the latest policy or form</h3><p>Announcements, policies, benefits and forms in one place on every employee's phone.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-pp">Power Apps</li><li class="t-sp">SharePoint</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/intranet.html" data-tools="SharePoint"><span class="tag green">Demo company</span><h3>Company news gets lost in email</h3><p>One home page for news, announcements, key dates and live plant status.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-sp">SharePoint</li></ul><span class="read-more">Read the case study</span></a>
         </div>
       </div>
       <div class="case-group" id="double-entry">
         <h2>Typing the same thing twice</h2>
         <div class="grid grid-2">
-          <a class="card case-card case-link" href="/case-studies/contracts.html" data-tools="Dynamics 365|Power Automate"><span class="tag">Real-world project</span><h3>Contracts go out with mistakes</h3><p>Contracts built in one click from the sales record, from an approved template.</p><ul class="tool-tags" aria-label="Tools used"><li>Dynamics 365</li><li>Power Automate</li></ul><span class="read-more">Read the case study</span></a>
-          <div class="card case-card" data-tools="Power Automate|Dynamics 365"><span class="tag">Real-world project</span><h3>Winning a deal means setting it up in several systems</h3><p>Marking a deal as won sets up the customer and job, notifies the team and creates shared folders.</p><ul class="tool-tags" aria-label="Tools used"><li>Power Automate</li><li>Dynamics 365</li></ul><span class="soon">Write-up coming soon</span></div>
-          <a class="card case-card case-link" href="/case-studies/receipts.html" data-tools="Power Apps"><span class="tag">Real-world project</span><h3>Receipts arrive missing the job they belong to</h3><p>Receipts submitted from a phone, already coded to the job and task.</p><ul class="tool-tags" aria-label="Tools used"><li>Power Apps</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/contracts.html" data-tools="Dynamics 365|Power Automate"><span class="tag">Real-world project</span><h3>Contracts go out with mistakes</h3><p>Contracts built in one click from the sales record, from an approved template.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-d365">Dynamics 365</li><li class="t-pp">Power Automate</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/deal-won.html" data-tools="Power Automate|Dynamics 365"><span class="tag">Real-world project</span><h3>Winning a deal means setting it up in several systems</h3><p>Marking a deal as won sets up the customer and job, notifies the team and creates shared folders.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-pp">Power Automate</li><li class="t-d365">Dynamics 365</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/receipts.html" data-tools="Power Apps"><span class="tag">Real-world project</span><h3>Receipts arrive missing the job they belong to</h3><p>Receipts submitted from a phone, already coded to the job and task.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-pp">Power Apps</li></ul><span class="read-more">Read the case study</span></a>
         </div>
       </div>
       <div class="case-group" id="field">
         <h2>Paperwork in the field</h2>
         <div class="grid grid-2">
-          <a class="card case-card case-link" href="/case-studies/vehicle-inspections.html" data-tools="Power Apps|Power Automate"><span class="tag">Real-world project</span><h3>Vehicle inspections are still on paper</h3><p>Inspections on a phone, with problems sent straight to maintenance.</p><ul class="tool-tags" aria-label="Tools used"><li>Power Apps</li><li>Power Automate</li></ul><span class="read-more">Read the case study</span></a>
-          <div class="card case-card" data-tools="Power Apps"><span class="tag">Real-world project</span><h3>Crews don't know what's coming up next</h3><p>Field and production crews see recent, current and upcoming jobs on their phones.</p><ul class="tool-tags" aria-label="Tools used"><li>Power Apps</li></ul><span class="soon">Write-up coming soon</span></div>
+          <a class="card case-card case-link" href="/case-studies/vehicle-inspections.html" data-tools="Power Apps|Power Automate"><span class="tag">Real-world project</span><h3>Vehicle inspections are still on paper</h3><p>Inspections on a phone, with problems sent straight to maintenance.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-pp">Power Apps</li><li class="t-pp">Power Automate</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/upcoming-work.html" data-tools="Power Apps"><span class="tag">Real-world project</span><h3>Crews don't know what's coming up next</h3><p>Field and production crews see recent, current and upcoming jobs on their phones.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-pp">Power Apps</li></ul><span class="read-more">Read the case study</span></a>
         </div>
       </div>
       <div class="case-group" id="too-late">
         <h2>Finding out too late</h2>
         <div class="grid grid-2">
-          <a class="card case-card case-link" href="/case-studies/production-status.html" data-tools="Power BI|SharePoint"><span class="tag">Real-world project</span><h3>Purchasing and production aren't on the same page</h3><p>One board for job status, with purchasing notes next to the job they affect.</p><ul class="tool-tags" aria-label="Tools used"><li>Power BI</li><li>SharePoint</li></ul><span class="read-more">Read the case study</span></a>
-          <a class="card case-card case-link" href="/case-studies/permits.html" data-tools="Power BI"><span class="tag">Real-world project</span><h3>Permits stall and nobody notices</h3><p>A scorecard that shows how many jobs sit at each permitting stage.</p><ul class="tool-tags" aria-label="Tools used"><li>Power BI</li></ul><span class="read-more">Read the case study</span></a>
-          <a class="card case-card case-link" href="/case-studies/labor-hours.html" data-tools="Power BI|Dynamics 365"><span class="tag">Real-world project</span><h3>I can't see where the labor hours went</h3><p>Labor hours by job and task, for any date range, without a spreadsheet.</p><ul class="tool-tags" aria-label="Tools used"><li>Power BI</li><li>Dynamics 365</li></ul><span class="read-more">Read the case study</span></a>
-          <div class="card case-card" data-tools="Power BI|Power Apps"><span class="tag">Real-world project</span><h3>Fuel tax reporting is a scramble</h3><p>Trip logs turn into miles and gallons by state, with problem entries flagged.</p><ul class="tool-tags" aria-label="Tools used"><li>Power BI</li><li>Power Apps</li></ul><span class="soon">Write-up coming soon</span></div>
-          <div class="card case-card" data-tools="Power Automate|SharePoint"><span class="tag">Real-world project</span><h3>Reviews and birthdays get forgotten</h3><p>Managers are reminded of birthdays, annual reviews and new-hire reviews, with the right form.</p><ul class="tool-tags" aria-label="Tools used"><li>Power Automate</li><li>SharePoint</li></ul><span class="soon">Write-up coming soon</span></div>
-          <div class="card case-card" data-tools="Power BI"><span class="tag green">Demo company</span><h3>Leadership can't see where changes stand</h3><p>One page shows every change request, how fast approvals move and whether the rules held.</p><ul class="tool-tags" aria-label="Tools used"><li>Power BI</li></ul><span class="soon">Write-up coming soon</span></div>
+          <a class="card case-card case-link" href="/case-studies/production-status.html" data-tools="Power BI|SharePoint"><span class="tag">Real-world project</span><h3>Purchasing and production aren't on the same page</h3><p>One board for job status, with purchasing notes next to the job they affect.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-bi">Power BI</li><li class="t-sp">SharePoint</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/permits.html" data-tools="Power BI"><span class="tag">Real-world project</span><h3>Permits stall and nobody notices</h3><p>A scorecard that shows how many jobs sit at each permitting stage.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-bi">Power BI</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/labor-hours.html" data-tools="Power BI|Dynamics 365"><span class="tag">Real-world project</span><h3>I can't see where the labor hours went</h3><p>Labor hours by job and task, for any date range, without a spreadsheet.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-bi">Power BI</li><li class="t-d365">Dynamics 365</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/fuel-tax.html" data-tools="Power BI|Power Apps"><span class="tag">Real-world project</span><h3>Fuel tax reporting is a scramble</h3><p>Trip logs turn into miles and gallons by state, with problem entries flagged.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-bi">Power BI</li><li class="t-pp">Power Apps</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/milestones.html" data-tools="Power Automate|SharePoint"><span class="tag">Real-world project</span><h3>Reviews and birthdays get forgotten</h3><p>Managers are reminded of birthdays, annual reviews and new-hire reviews, with the right form.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-pp">Power Automate</li><li class="t-sp">SharePoint</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/change-dashboard.html" data-tools="Power BI"><span class="tag green">Demo company</span><h3>Leadership can't see where changes stand</h3><p>One page shows every change request, how fast approvals move and whether the rules held.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-bi">Power BI</li></ul><span class="read-more">Read the case study</span></a>
         </div>
       </div>
-        <p class="no-results" hidden>No case studies use that tool yet.</p>
+        <p class="no-results" hidden>No case studies match both filters yet. Try another tool or problem.</p>
       </div>
     </section>
 
@@ -127,24 +138,30 @@
 
   <script>
     (function () {
-      var chips = document.querySelectorAll('.chip');
-      var cards = document.querySelectorAll('.case-card');
+      var state = { tool: 'all', group: 'all' };
+      var toolChips = document.querySelectorAll('.chip[data-tool]');
+      var groupChips = document.querySelectorAll('.chip[data-group]');
       var groups = document.querySelectorAll('.case-group');
       var empty = document.querySelector('.no-results');
-      function apply(tool) {
-        chips.forEach(function (c) { c.setAttribute('aria-pressed', c.dataset.tool === tool ? 'true' : 'false'); });
-        cards.forEach(function (card) {
-          var show = tool === 'all' || card.dataset.tools.split('|').indexOf(tool) !== -1;
-          card.hidden = !show;
-        });
+      function apply() {
+        toolChips.forEach(function (c) { c.setAttribute('aria-pressed', c.dataset.tool === state.tool ? 'true' : 'false'); });
+        groupChips.forEach(function (c) { c.setAttribute('aria-pressed', c.dataset.group === state.group ? 'true' : 'false'); });
         var any = false;
         groups.forEach(function (g) {
-          var visible = g.querySelectorAll('.case-card:not([hidden])').length > 0;
-          g.hidden = !visible; if (visible) any = true;
+          var groupOk = state.group === 'all' || g.id === state.group;
+          var shown = 0;
+          g.querySelectorAll('.case-card').forEach(function (card) {
+            var toolOk = state.tool === 'all' || card.dataset.tools.split('|').indexOf(state.tool) !== -1;
+            card.hidden = !(groupOk && toolOk);
+            if (!card.hidden) shown++;
+          });
+          g.hidden = shown === 0;
+          if (shown) any = true;
         });
         empty.hidden = any;
       }
-      chips.forEach(function (c) { c.addEventListener('click', function () { apply(c.dataset.tool); }); });
+      toolChips.forEach(function (c) { c.addEventListener('click', function () { state.tool = c.dataset.tool; apply(); }); });
+      groupChips.forEach(function (c) { c.addEventListener('click', function () { state.group = c.dataset.group; apply(); }); });
     })();
   </script>
   </main>

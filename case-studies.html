@@ -6,7 +6,7 @@
   <!-- Remove noindex at go-live (name not yet formally checked) -->
   <meta name="robots" content="noindex, nofollow">
   <title>Case Studies | Office Tune-Up Consulting</title>
-  <meta name="description" content="Examples of office processes fixed: contracts, production status, approvals and document control.">
+  <meta name="description" content="Office problems and how they were solved: approvals, documents, double entry, field paperwork and late surprises.">
   <link rel="stylesheet" href="/css/site.css">
 </head>
 <body>
@@ -38,121 +38,89 @@
   </header>
 
   <main id="main">
-    <div class="page-title" id="top">
+    <div class="page-title">
       <div class="wrap">
         <h1>Case Studies</h1>
-        <p class="lead">Real problems, what changed, and what it meant for the people doing the work.</p>
+        <p class="lead">Find the problem that sounds like your office, and see how it was solved.</p>
       </div>
     </div>
 
     <section class="section-white">
       <div class="wrap">
-        <div class="note" style="margin-bottom:28px">
-          <p>Two of these were built for a previous employer and two in a test company I set up to practice. Company names and data are left out.</p>
+        <div class="note">
+          <p><strong>Real-world projects</strong> were built for, and used at, a working business. <strong>Demo company</strong> projects were built in Lumen Photonics, a sample manufacturer I created in Microsoft 365 to show a complete system end to end. Company names, customers and figures are left out or blurred.</p>
         </div>
-        <div class="grid grid-2">
-          <a class="card case-link" href="#contracts">
-            <span class="tag">Previous employer</span>
-            <h3>Contracts built from the sales record, not by hand</h3>
-            <p>Typing the same information into three places</p>
-          </a>
-          <a class="card case-link" href="#production-status">
-            <span class="tag">Previous employer</span>
-            <h3>One production board for purchasing and the shop</h3>
-            <p>Finding out about problems too late</p>
-          </a>
-          <a class="card case-link" href="#approvals">
-            <span class="tag green">Test company</span>
-            <h3>Approvals that route themselves</h3>
-            <p>Chasing approvals by email</p>
-          </a>
-          <a class="card case-link" href="#documents">
-            <span class="tag green">Test company</span>
-            <h3>One home for every procedure</h3>
-            <p>Hunting for the latest version of a document</p>
-          </a>
+        <div class="filter" role="group" aria-labelledby="filter-group-label">
+          <p id="filter-group-label" class="filter-label">Filter by problem</p>
+          <div class="chips">
+            <button type="button" class="chip" data-group="all" aria-pressed="true">All problems</button>
+            <button type="button" class="chip" data-group="approvals-stuck" aria-pressed="false">Approvals stall and steps get skipped</button>
+            <button type="button" class="chip" data-group="documents" aria-pressed="false">Documents are hard to find</button>
+            <button type="button" class="chip" data-group="double-entry" aria-pressed="false">Typing the same thing twice</button>
+            <button type="button" class="chip" data-group="field" aria-pressed="false">Paperwork in the field</button>
+            <button type="button" class="chip" data-group="too-late" aria-pressed="false">Finding out too late</button>
+          </div>
+        </div>
+        <div class="filter" role="group" aria-labelledby="filter-tool-label">
+          <p id="filter-tool-label" class="filter-label">Filter by tool</p>
+          <div class="chips">
+            <button type="button" class="chip" data-tool="all" aria-pressed="true">All tools</button>
+            <button type="button" class="chip t-pp" data-tool="Power Apps" aria-pressed="false">Power Apps</button>
+            <button type="button" class="chip t-pp" data-tool="Power Automate" aria-pressed="false">Power Automate</button>
+            <button type="button" class="chip t-bi" data-tool="Power BI" aria-pressed="false">Power BI</button>
+            <button type="button" class="chip t-sp" data-tool="SharePoint" aria-pressed="false">SharePoint</button>
+            <button type="button" class="chip t-d365" data-tool="Dynamics 365" aria-pressed="false">Dynamics 365</button>
+          </div>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="wrap case-list">
-        <article class="case" id="contracts">
-          <span class="tag">Built for a previous employer</span>
-          <h2>Contracts built from the sales record, not by hand</h2>
-          <p class="case-pain">The problem: typing the same information into three places</p>
-          <h3>The situation</h3>
-            <p>Customer contracts started from a master Word document. Staff copied it, typed in the customer and job details, and edited the terms as they went. Word's track changes showed some edits, but not all of them were captured, and anyone with access to the master could change it.</p>
-            <p>Mistakes surfaced only when a customer noticed them.</p>
-          <h3>What changed</h3>
-            <p>A Generate Contract button now sits on the sales record. One click pulls the customer, address, job site and project details already entered there and fills them into an approved contract template.</p>
-            <p>The right contract package is chosen automatically by the state the project is in (Oregon or Washington), and the finished contract arrives as a PDF, ready to send.</p>
-          <h3>What it meant for the team</h3>
-          <ul>
-              <li>Details are entered once, in the sales record, instead of being retyped into each contract.</li>
-              <li>Every contract starts from the same approved wording. Changing the terms means deliberately updating the template, not editing a copy.</li>
-              <li>Nobody has to remember which state's version to use.</li>
-          </ul>
-          <p class="case-tools"><strong>Built with:</strong> Dynamics 365 Sales, Power Automate, Word templates</p>
-          <p class="case-top"><a href="#top">Back to all case studies</a></p>
-        </article>
-        <article class="case" id="production-status">
-          <span class="tag">Built for a previous employer</span>
-          <h2>One production board for purchasing and the shop</h2>
-          <p class="case-pain">The problem: finding out about problems too late</p>
-          <h3>The situation</h3>
-            <p>Job status lived in the company's main business system, while the production team tracked actual start and finish dates in a separate list. Seeing where a job stood meant checking both.</p>
-            <p>When purchasing learned that a material delivery would be late, there was no set place to tell production.</p>
-          <h3>What changed</h3>
-            <p>I proposed and built a single board that combines both sources: one line per job, showing whether it's finished, on the floor or not started, with running totals for the year and quarter.</p>
-            <p>A notes column gives purchasing one place to flag anything that could slow production, such as a late material delivery, right next to the job it affects.</p>
-          <h3>What it meant for the team</h3>
-          <ul>
-              <li>Purchasing and production management look at the same list instead of two.</li>
-              <li>Possible delays are written down where production will see them, instead of passed along in conversation.</li>
-              <li>Job status can be read at a glance.</li>
-          </ul>
-          <p class="case-tools"><strong>Built with:</strong> Power BI, SharePoint, the company's existing business system</p>
-          <p class="case-top"><a href="#top">Back to all case studies</a></p>
-        </article>
-        <article class="case" id="approvals">
-          <span class="tag green">Built in a test company</span>
-          <h2>Approvals that route themselves</h2>
-          <p class="case-pain">The problem: chasing approvals by email</p>
-          <h3>The situation</h3>
-            <p>In a test company I set up to practice, every change to how the business runs needs sign-off from the person who owns that process. Changes that affect the financials also need a review from the controller.</p>
-            <p>Done by email, nobody can easily tell who has a request, who approved it, or whether the right people were asked at all.</p>
-          <h3>What changed</h3>
-            <p>Submitting a request now sends it to the right approver automatically, based on their role rather than a name written into the setup. Financial changes go on to the controller.</p>
-            <p>One person can't approve their own request or approve it twice; if that would happen, it goes to their manager instead. Every decision is recorded with who made it, and the outcome is written back to the request.</p>
-          <h3>What it meant for the team</h3>
-          <ul>
-              <li>Requesters can see where their request stands without asking.</li>
-              <li>When someone changes roles, approvals follow the role. Nothing has to be rebuilt.</li>
-              <li>There's a clear record of every approval if an auditor asks.</li>
-          </ul>
-          <p class="case-tools"><strong>Built with:</strong> SharePoint, Power Automate, Microsoft 365 groups</p>
-          <p class="case-top"><a href="#top">Back to all case studies</a></p>
-        </article>
-        <article class="case" id="documents">
-          <span class="tag green">Built in a test company</span>
-          <h2>One home for every procedure</h2>
-          <p class="case-pain">The problem: hunting for the latest version of a document</p>
-          <h3>The situation</h3>
-            <p>In the same test company, the scenario came from a quality audit: an operator followed an outdated work instruction because an old copy was still sitting on a shared drive.</p>
-            <p>Procedures lived in several places, in several versions, with no clear owner.</p>
-          <h3>What changed</h3>
-            <p>Procedures and work instructions now live in one library. Each document must have an owner, a department and a next review date before it can be saved.</p>
-            <p>Drafts stay hidden while they're being revised. Everyone else only ever sees the current approved version, and every past version is kept along with who approved it.</p>
-          <h3>What it meant for the team</h3>
-          <ul>
-              <li>Staff find the current version in one place, every time.</li>
-              <li>Authors can revise a document without confusing anyone.</li>
-              <li>Every document comes up for review once a year instead of going stale.</li>
-          </ul>
-          <p class="case-tools"><strong>Built with:</strong> SharePoint</p>
-          <p class="case-top"><a href="#top">Back to all case studies</a></p>
-        </article>
+    <section class="case-groups">
+      <div class="wrap">
+      <div class="case-group" id="approvals-stuck">
+        <h2>Approvals stall and steps get skipped</h2>
+        <div class="grid grid-2">
+          <a class="card case-card case-link" href="/case-studies/approvals.html" data-tools="SharePoint|Power Automate"><span class="tag green">Demo company</span><h3>Approvals sit in someone's inbox</h3><p>Requests route themselves to the right approver, and every decision is recorded.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-sp">SharePoint</li><li class="t-pp">Power Automate</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/equipment-retirement.html" data-tools="Power Automate"><span class="tag">Real-world project</span><h3>Equipment gets retired without anyone signing off</h3><p>A retirement request now waits for approval, and the requester hears back in Teams.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-pp">Power Automate</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/skipped-steps.html" data-tools="SharePoint|Power Automate"><span class="tag green">Demo company</span><h3>People skip steps in the process</h3><p>The rules are enforced automatically, and someone is alerted if the check ever fails.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-sp">SharePoint</li><li class="t-pp">Power Automate</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/sales-process.html" data-tools="Dynamics 365|Power Automate"><span class="tag">Real-world project</span><h3>Every salesperson runs deals their own way</h3><p>A guided sales path collects the right information at each stage before a deal moves on.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-d365">Dynamics 365</li><li class="t-pp">Power Automate</li></ul><span class="read-more">Read the case study</span></a>
+        </div>
+      </div>
+      <div class="case-group" id="documents">
+        <h2>Documents are hard to find</h2>
+        <div class="grid grid-2">
+          <a class="card case-card case-link" href="/case-studies/documents.html" data-tools="SharePoint"><span class="tag green">Demo company</span><h3>Staff use outdated procedures</h3><p>One library where everyone sees only the current approved version.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-sp">SharePoint</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/employee-documents.html" data-tools="Power Apps|SharePoint"><span class="tag">Real-world project</span><h3>Employees can't find the latest policy or form</h3><p>Announcements, policies, benefits and forms in one place on every employee's phone.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-pp">Power Apps</li><li class="t-sp">SharePoint</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/intranet.html" data-tools="SharePoint"><span class="tag green">Demo company</span><h3>Company news gets lost in email</h3><p>One home page for news, announcements, key dates and live plant status.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-sp">SharePoint</li></ul><span class="read-more">Read the case study</span></a>
+        </div>
+      </div>
+      <div class="case-group" id="double-entry">
+        <h2>Typing the same thing twice</h2>
+        <div class="grid grid-2">
+          <a class="card case-card case-link" href="/case-studies/contracts.html" data-tools="Dynamics 365|Power Automate"><span class="tag">Real-world project</span><h3>Contracts go out with mistakes</h3><p>Contracts built in one click from the sales record, from an approved template.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-d365">Dynamics 365</li><li class="t-pp">Power Automate</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/deal-won.html" data-tools="Power Automate|Dynamics 365"><span class="tag">Real-world project</span><h3>Winning a deal means setting it up in several systems</h3><p>Marking a deal as won sets up the customer and job, notifies the team and creates shared folders.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-pp">Power Automate</li><li class="t-d365">Dynamics 365</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/receipts.html" data-tools="Power Apps"><span class="tag">Real-world project</span><h3>Receipts arrive missing the job they belong to</h3><p>Receipts submitted from a phone, already coded to the job and task.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-pp">Power Apps</li></ul><span class="read-more">Read the case study</span></a>
+        </div>
+      </div>
+      <div class="case-group" id="field">
+        <h2>Paperwork in the field</h2>
+        <div class="grid grid-2">
+          <a class="card case-card case-link" href="/case-studies/vehicle-inspections.html" data-tools="Power Apps|Power Automate"><span class="tag">Real-world project</span><h3>Vehicle inspections are still on paper</h3><p>Inspections on a phone, with problems sent straight to maintenance.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-pp">Power Apps</li><li class="t-pp">Power Automate</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/upcoming-work.html" data-tools="Power Apps"><span class="tag">Real-world project</span><h3>Crews don't know what's coming up next</h3><p>Field and production crews see recent, current and upcoming jobs on their phones.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-pp">Power Apps</li></ul><span class="read-more">Read the case study</span></a>
+        </div>
+      </div>
+      <div class="case-group" id="too-late">
+        <h2>Finding out too late</h2>
+        <div class="grid grid-2">
+          <a class="card case-card case-link" href="/case-studies/production-status.html" data-tools="Power BI|SharePoint"><span class="tag">Real-world project</span><h3>Purchasing and production aren't on the same page</h3><p>One board for job status, with purchasing notes next to the job they affect.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-bi">Power BI</li><li class="t-sp">SharePoint</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/permits.html" data-tools="Power BI"><span class="tag">Real-world project</span><h3>Permits stall and nobody notices</h3><p>A scorecard that shows how many jobs sit at each permitting stage.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-bi">Power BI</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/labor-hours.html" data-tools="Power BI|Dynamics 365"><span class="tag">Real-world project</span><h3>I can't see where the labor hours went</h3><p>Labor hours by job and task, for any date range, without a spreadsheet.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-bi">Power BI</li><li class="t-d365">Dynamics 365</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/fuel-tax.html" data-tools="Power BI|Power Apps"><span class="tag">Real-world project</span><h3>Fuel tax reporting is a scramble</h3><p>Trip logs turn into miles and gallons by state, with problem entries flagged.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-bi">Power BI</li><li class="t-pp">Power Apps</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/milestones.html" data-tools="Power Automate|SharePoint"><span class="tag">Real-world project</span><h3>Reviews and birthdays get forgotten</h3><p>Managers are reminded of birthdays, annual reviews and new-hire reviews, with the right form.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-pp">Power Automate</li><li class="t-sp">SharePoint</li></ul><span class="read-more">Read the case study</span></a>
+          <a class="card case-card case-link" href="/case-studies/change-dashboard.html" data-tools="Power BI"><span class="tag green">Demo company</span><h3>Leadership can't see where changes stand</h3><p>One page shows every change request, how fast approvals move and whether the rules held.</p><ul class="tool-tags" aria-label="Tools used"><li class="t-bi">Power BI</li></ul><span class="read-more">Read the case study</span></a>
+        </div>
+      </div>
+        <p class="no-results" hidden>No case studies match both filters yet. Try another tool or problem.</p>
       </div>
     </section>
 
@@ -167,6 +135,35 @@
         </div>
       </div>
     </section>
+
+  <script>
+    (function () {
+      var state = { tool: 'all', group: 'all' };
+      var toolChips = document.querySelectorAll('.chip[data-tool]');
+      var groupChips = document.querySelectorAll('.chip[data-group]');
+      var groups = document.querySelectorAll('.case-group');
+      var empty = document.querySelector('.no-results');
+      function apply() {
+        toolChips.forEach(function (c) { c.setAttribute('aria-pressed', c.dataset.tool === state.tool ? 'true' : 'false'); });
+        groupChips.forEach(function (c) { c.setAttribute('aria-pressed', c.dataset.group === state.group ? 'true' : 'false'); });
+        var any = false;
+        groups.forEach(function (g) {
+          var groupOk = state.group === 'all' || g.id === state.group;
+          var shown = 0;
+          g.querySelectorAll('.case-card').forEach(function (card) {
+            var toolOk = state.tool === 'all' || card.dataset.tools.split('|').indexOf(state.tool) !== -1;
+            card.hidden = !(groupOk && toolOk);
+            if (!card.hidden) shown++;
+          });
+          g.hidden = shown === 0;
+          if (shown) any = true;
+        });
+        empty.hidden = any;
+      }
+      toolChips.forEach(function (c) { c.addEventListener('click', function () { state.tool = c.dataset.tool; apply(); }); });
+      groupChips.forEach(function (c) { c.addEventListener('click', function () { state.group = c.dataset.group; apply(); }); });
+    })();
+  </script>
   </main>
 
   <footer class="site-footer">

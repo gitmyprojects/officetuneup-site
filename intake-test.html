@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Remove noindex at go-live (name not yet formally checked) -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Request form (test) | Office Tune-Up Consulting</title>
+  <meta name="description" content="Request form test page.">
+  <link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="/">
+      <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
+        <rect width="40" height="40" rx="9" fill="#1c3557"/>
+        <path d="M9 26a11 11 0 0 1 22 0" fill="none" stroke="#8fb5e0" stroke-width="3" stroke-linecap="round"/>
+        <path d="M20 26l7-8" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="20" cy="26" r="3" fill="#ffffff"/>
+      </svg>
+        <span class="brand-text">
+          <span class="brand-name">Office Tune-Up Consulting</span>
+          <span class="brand-tagline">Fewer steps. Smoother office. Room to grow.</span>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services.html">Services</a></li>
+          <li><a href="/case-studies.html">Case Studies</a></li>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <div class="page-title">
+      <div class="wrap">
+        <h1>Request a free Tune-Up Check</h1>
+        <p class="lead">Test version of the request form. Only signed-in owners can see this page.</p>
+      </div>
+    </div>
+
+    <section class="section-white">
+      <div class="wrap prose">
+        <form id="intake-form" class="intake-form" novalidate>
+          <div class="field">
+            <label for="f-name">Your name <span class="req">(required)</span></label>
+            <input id="f-name" name="name" type="text" autocomplete="name" maxlength="100" required>
+            <p class="field-error" id="e-name" hidden></p>
+          </div>
+          <div class="field">
+            <label for="f-business">Business name</label>
+            <input id="f-business" name="business" type="text" autocomplete="organization" maxlength="150">
+            <p class="field-error" id="e-business" hidden></p>
+          </div>
+          <div class="field">
+            <label for="f-email">Email <span class="req">(required)</span></label>
+            <input id="f-email" name="email" type="email" autocomplete="email" maxlength="200" required>
+            <p class="field-error" id="e-email" hidden></p>
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="40">
+            <p class="field-error" id="e-phone" hidden></p>
+          </div>
+          <div class="field">
+            <label for="f-size">How many people work in your office?</label>
+            <select id="f-size" name="officeSize">
+              <option value="">Choose one</option>
+              <option value="1-5">1 to 5</option>
+              <option value="6-15">6 to 15</option>
+              <option value="16-50">16 to 50</option>
+              <option value="51+">More than 50</option>
+            </select>
+            <p class="field-error" id="e-officeSize" hidden></p>
+          </div>
+          <div class="field">
+            <label for="f-tools">Tools you use today</label>
+            <input id="f-tools" name="tools" type="text" maxlength="500" placeholder="For example Microsoft 365, Dynamics 365, spreadsheets">
+            <p class="field-error" id="e-tools" hidden></p>
+          </div>
+          <div class="field">
+            <label for="f-message">What's slowing your office down? <span class="req">(required)</span></label>
+            <textarea id="f-message" name="message" rows="6" maxlength="3000" required></textarea>
+            <p class="field-error" id="e-message" hidden></p>
+          </div>
+          <fieldset class="field">
+            <legend>What are you interested in? <span class="req">(required)</span></legend>
+            <label class="choice"><input type="radio" name="interest" value="tune-up-check" checked> A free Tune-Up Check (whole office)</label>
+            <label class="choice"><input type="radio" name="interest" value="quick-fix"> A Quick Fix (one problem)</label>
+            <label class="choice"><input type="radio" name="interest" value="not-sure"> Not sure yet</label>
+            <p class="field-error" id="e-interest" hidden></p>
+          </fieldset>
+          <div class="hp" aria-hidden="true">
+            <label for="f-website">Leave this empty</label>
+            <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <button class="btn btn-primary" type="submit">Send request</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>&copy; 2026 Office Tune-Up Consulting &middot; Washington state</p>
+      <p><a href="/contact.html">Start with a free Tune-Up Check</a></p>
+    </div>
+  </footer>
+  <script src="/js/intake.js" defer></script>
+</body>
+</html>

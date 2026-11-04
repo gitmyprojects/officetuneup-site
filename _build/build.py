@@ -15,7 +15,7 @@ MARK = '''<svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusab
 
 NAV = [("index.html","Home"),("services.html","Services"),("case-studies.html","Case Studies"),("about.html","About"),("contact.html","Contact")]
 
-def page(fname, title, desc, body, current=None):
+def page(fname, title, desc, body, current=None, scripts=""):
     links = "\n".join(
         f'          <li><a href="/{h if h!="index.html" else ""}"{" aria-current=\"page\"" if h==current else ""}>{l}</a></li>'
         for h,l in NAV)
@@ -60,7 +60,7 @@ def page(fname, title, desc, body, current=None):
       <p><a href="/contact.html">Start with a free Tune-Up Check</a></p>
     </div>
   </footer>
-</body>
+{scripts}</body>
 </html>
 '''
     with open(os.path.join(out, fname), "w") as f:
@@ -320,6 +320,79 @@ contact = '''    <div class="page-title">
       </div>
     </section>'''
 page("contact.html", "Contact", "Request a free Tune-Up Check or a Quick Fix from Office Tune-Up Consulting.", contact, "contact.html")
+
+# ---------------- Intake form test page ----------------
+# Locked to the "owner" role in staticwebapp.config.json until go-live.
+# At go-live this form moves onto contact.html and the role locks come off.
+intake_test = '''    <div class="page-title">
+      <div class="wrap">
+        <h1>Request a free Tune-Up Check</h1>
+        <p class="lead">Test version of the request form. Only signed-in owners can see this page.</p>
+      </div>
+    </div>
+
+    <section class="section-white">
+      <div class="wrap prose">
+        <form id="intake-form" class="intake-form" novalidate>
+          <div class="field">
+            <label for="f-name">Your name <span class="req">(required)</span></label>
+            <input id="f-name" name="name" type="text" autocomplete="name" maxlength="100" required>
+            <p class="field-error" id="e-name" hidden></p>
+          </div>
+          <div class="field">
+            <label for="f-business">Business name</label>
+            <input id="f-business" name="business" type="text" autocomplete="organization" maxlength="150">
+            <p class="field-error" id="e-business" hidden></p>
+          </div>
+          <div class="field">
+            <label for="f-email">Email <span class="req">(required)</span></label>
+            <input id="f-email" name="email" type="email" autocomplete="email" maxlength="200" required>
+            <p class="field-error" id="e-email" hidden></p>
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone</label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="40">
+            <p class="field-error" id="e-phone" hidden></p>
+          </div>
+          <div class="field">
+            <label for="f-size">How many people work in your office?</label>
+            <select id="f-size" name="officeSize">
+              <option value="">Choose one</option>
+              <option value="1-5">1 to 5</option>
+              <option value="6-15">6 to 15</option>
+              <option value="16-50">16 to 50</option>
+              <option value="51+">More than 50</option>
+            </select>
+            <p class="field-error" id="e-officeSize" hidden></p>
+          </div>
+          <div class="field">
+            <label for="f-tools">Tools you use today</label>
+            <input id="f-tools" name="tools" type="text" maxlength="500" placeholder="For example Microsoft 365, Dynamics 365, spreadsheets">
+            <p class="field-error" id="e-tools" hidden></p>
+          </div>
+          <div class="field">
+            <label for="f-message">What's slowing your office down? <span class="req">(required)</span></label>
+            <textarea id="f-message" name="message" rows="6" maxlength="3000" required></textarea>
+            <p class="field-error" id="e-message" hidden></p>
+          </div>
+          <fieldset class="field">
+            <legend>What are you interested in? <span class="req">(required)</span></legend>
+            <label class="choice"><input type="radio" name="interest" value="tune-up-check" checked> A free Tune-Up Check (whole office)</label>
+            <label class="choice"><input type="radio" name="interest" value="quick-fix"> A Quick Fix (one problem)</label>
+            <label class="choice"><input type="radio" name="interest" value="not-sure"> Not sure yet</label>
+            <p class="field-error" id="e-interest" hidden></p>
+          </fieldset>
+          <div class="hp" aria-hidden="true">
+            <label for="f-website">Leave this empty</label>
+            <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <button class="btn btn-primary" type="submit">Send request</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>'''
+page("intake-test.html", "Request form (test)", "Request form test page.", intake_test, None,
+     '  <script src="/js/intake.js" defer></script>\n')
 
 # ---------------- 404 ----------------
 nf = '''    <section>

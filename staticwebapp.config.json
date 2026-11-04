@@ -2,10 +2,20 @@
   "routes": [
     { "route": "/.github/*", "statusCode": 404 },
     { "route": "/_build/*", "statusCode": 404 },
-    { "route": "/staticwebapp.config.json", "statusCode": 404 }
+    { "route": "/staticwebapp.config.json", "statusCode": 404 },
+    { "route": "/.gitignore", "statusCode": 404 },
+    { "route": "/.auth/login/aad", "statusCode": 404 },
+    { "route": "/.auth/login/twitter", "statusCode": 404 },
+    { "route": "/intake-test.html", "allowedRoles": ["owner"] },
+    { "route": "/api/*", "allowedRoles": ["owner"] }
   ],
   "responseOverrides": {
+    "401": { "redirect": "/.auth/login/github?post_login_redirect_uri=.referrer", "statusCode": 302 },
+    "403": { "rewrite": "/404.html" },
     "404": { "rewrite": "/404.html" }
+  },
+  "platform": {
+    "apiRuntime": "node:20"
   },
   "globalHeaders": {
     "X-Robots-Tag": "noindex, nofollow",

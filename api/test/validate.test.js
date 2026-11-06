@@ -7,7 +7,7 @@ const NOW = 1_800_000_000_000;
 const good = () => ({
   name: 'Pat Example', business: 'Example Builders', email: 'pat@example.com', phone: '',
   officeSize: '6-15', tools: 'Microsoft 365, spreadsheets', interest: 'tune-up-check',
-  message: 'Approvals get lost in email.', website: '', startedAt: NOW - 60_000,
+  message: 'Approvals get lost in email.', hp_extra: '', elapsedMs: 60_000,
 });
 
 test('accepts a clean submission', () => {
@@ -16,13 +16,16 @@ test('accepts a clean submission', () => {
   assert.equal(r.data.email, 'pat@example.com');
 });
 
-test('honeypot filled is treated as spam', () => {
+test('honeypot filled is treated as spam (new and old field names)', () => {
+  assert.deepEqual(checkSubmission({ ...good(), hp_extra: 'http://spam' }, NOW), { spam: true });
   assert.deepEqual(checkSubmission({ ...good(), website: 'http://spam' }, NOW), { spam: true });
 });
 
-test('too fast or missing start time is spam', () => {
-  assert.ok(checkSubmission({ ...good(), startedAt: NOW - 500 }, NOW).spam);
-  assert.ok(checkSubmission({ ...good(), startedAt: undefined }, NOW).spam);
+test('too fast, too slow or missing elapsed time is spam', () => {
+  assert.ok(checkSubmission({ ...good(), elapsedMs: 500 }, NOW).spam);
+  assert.ok(checkSubmission({ ...good(), elapsedMs: 2 * 24 * 60 * 60 * 1000 }, NOW).spam);
+  assert.ok(checkSubmission({ ...good(), elapsedMs: undefined }, NOW).spam);
+  assert.ok(checkSubmission({ ...good(), elapsedMs: 'abc' }, NOW).spam);
 });
 
 test('missing required fields are reported', () => {

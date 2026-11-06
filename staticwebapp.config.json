@@ -6,7 +6,7 @@
     { "route": "/.gitignore", "statusCode": 404 },
     { "route": "/.auth/login/aad", "statusCode": 404 },
     { "route": "/.auth/login/twitter", "statusCode": 404 },
-    { "route": "/intake-test.html", "allowedRoles": ["owner"] },
+    { "route": "/intake-test.html", "allowedRoles": ["owner"], "headers": { "Cache-Control": "no-store" } },
     { "route": "/api/*", "allowedRoles": ["owner"] }
   ],
   "responseOverrides": {

@@ -29,17 +29,21 @@ const EMAIL = /^[^\s@<>()",;:]+@[^\s@<>()",;:]+\.[^\s@<>()",;:]{2,}$/;
 
 // Returns { spam: true } for bot-looking submissions (caller pretends success),
 // { errors: {...} } for invalid input, or { data: {...} } for a clean submission.
-function checkSubmission(body, now = Date.now()) {
+function checkSubmission(body) {
   if (!body || typeof body !== 'object' || Array.isArray(body)) {
     return { errors: { form: 'The form data could not be read.' } };
   }
 
   // Honeypot: a hidden field people never see. Anything in it means a bot.
-  if (typeof body.website === 'string' && body.website.trim() !== '') return { spam: true };
+  // Named "hp_extra" so browser autofill and password managers don't recognize it.
+  for (const name of ['hp_extra', 'website']) {
+    if (typeof body[name] === 'string' && body[name].trim() !== '') return { spam: true };
+  }
 
-  // Time check: submitted too fast, too late, or with no start time.
-  const started = Number(body.startedAt);
-  if (!Number.isFinite(started) || now - started < MIN_FILL_MS || now - started > MAX_FILL_MS) {
+  // Time check: how long the visitor spent on the page, measured in their browser.
+  // Uses elapsed time, not clock times, so a wrong clock on the visitor's computer can't trip it.
+  const elapsed = Number(body.elapsedMs);
+  if (!Number.isFinite(elapsed) || elapsed < MIN_FILL_MS || elapsed > MAX_FILL_MS) {
     return { spam: true };
   }
 

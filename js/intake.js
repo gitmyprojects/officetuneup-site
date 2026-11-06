@@ -5,7 +5,9 @@
   if (!form) return;
   var status = document.getElementById('form-status');
   var button = form.querySelector('button[type="submit"]');
-  var startedAt = Date.now(); // used by the server's time check
+  // Time on page, for the server's time check. performance.now() counts from page load
+  // and isn't affected by the computer's clock being wrong or changing.
+  function elapsedMs() { return Math.round(window.performance && performance.now ? performance.now() : 0); }
 
   function showErrors(errors) {
     var first = null;
@@ -36,10 +38,10 @@
     e.preventDefault();
     var fd = new FormData(form);
     var data = {};
-    ['name', 'business', 'email', 'phone', 'officeSize', 'tools', 'message', 'interest', 'website'].forEach(function (k) {
+    ['name', 'business', 'email', 'phone', 'officeSize', 'tools', 'message', 'interest', 'hp_extra'].forEach(function (k) {
       data[k] = String(fd.get(k) || '').trim();
     });
-    data.startedAt = startedAt;
+    data.elapsedMs = elapsedMs();
 
     var errors = localCheck(data);
     if (Object.keys(errors).length) { showErrors(errors); status.textContent = 'Please check the highlighted fields.'; return; }

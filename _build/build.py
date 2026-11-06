@@ -383,8 +383,8 @@ intake_test = '''    <div class="page-title">
             <p class="field-error" id="e-interest" hidden></p>
           </fieldset>
           <div class="hp" aria-hidden="true">
-            <label for="f-website">Leave this empty</label>
-            <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+            <label for="f-hp">Leave this empty</label>
+            <input id="f-hp" name="hp_extra" type="text" tabindex="-1" autocomplete="off" data-1p-ignore data-lpignore="true" data-bwignore>
           </div>
           <button class="btn btn-primary" type="submit">Send request</button>
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>

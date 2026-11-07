@@ -221,7 +221,11 @@ section { padding: 56px 0; }
 .tool-tags li { font-size: .76rem; font-weight: 700; letter-spacing: .02em; border-radius: 999px; padding: 3px 10px; color: #ffffff; background: var(--muted); }
 
 /* Tool colors (matched to the portfolio). Dynamics green darkened slightly so white text stays readable. */
-:root { --t-pp: #742774; --t-bi: #F2C811; --t-sp: #038387; --t-d365: #1f7f37; }
+:root { --t-pp: #742774; --t-bi: #F2C811; --t-sp: #038387; --t-d365: #1f7f37; --t-az: #0063B1; }
+.tool-tags .t-az { background: var(--t-az); }
+.chip.t-az::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 7px; vertical-align: 0; background: var(--t-az); }
+.chip.t-az[aria-pressed="true"] { background: var(--t-az); border-color: var(--t-az); }
+.chip.t-az[aria-pressed="true"]::before { background: currentColor; }
 .tool-tags .t-pp { background: var(--t-pp); }
 .tool-tags .t-bi { background: var(--t-bi); color: #1b1b1b; }
 .tool-tags .t-sp { background: var(--t-sp); }

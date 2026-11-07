@@ -10,7 +10,7 @@ GROUPS = [
  ("too-late", "Finding out too late"),
 ]
 
-TOOLS = ["Power Apps", "Power Automate", "Power BI", "SharePoint", "Dynamics 365"]
+TOOLS = ["Power Apps", "Power Automate", "Power BI", "SharePoint", "Dynamics 365", "Azure"]
 
 # slug, group, kind (real/demo), card title (owner's words), one-line summary, tools, has_page
 CARDS = [
@@ -52,12 +52,28 @@ CARDS = [
   "Trip logs turn into miles and gallons by state, with problem entries flagged.", ["Power BI", "Power Apps"], False),
  ("milestones", "too-late", "real", "Reviews and birthdays get forgotten",
   "Managers are reminded of birthdays, annual reviews and new-hire reviews, with the right form.", ["Power Automate", "SharePoint"], False),
+ ("website-requests", "too-late", "own", "Website inquiries sit unnoticed",
+  "Requests from the website are saved automatically, and an email alert goes out right away.", ["Azure"], True),
  ("change-dashboard", "too-late", "demo", "Leadership can't see where changes stand",
   "One page shows every change request, how fast approvals move and whether the rules held.", ["Power BI"], False),
 ]
 
 # Full write-ups
 PAGES = {
+ "website-requests": dict(
+  subtitle="This website's own request form",
+  situation=["Office Tune-Up Consulting needed a way for business owners to ask for a free Tune-Up Check from this website.",
+             "Many small business websites simply list an email address. That address soon collects spam, and a real request can sit unnoticed in a busy inbox."],
+  changed=["The Contact page has a short request form. Each request is checked, saved in a secure database, and an email alert goes out with the details. Hitting Reply on the alert answers the person who asked.",
+           "Spam is filtered out quietly, without making visitors solve a puzzle. The whole setup runs on Microsoft Azure's free tiers, so it costs nothing at this size."],
+  before=["Email address posted on the site", "Spam and real requests mixed together", "A request gets missed"],
+  after=["Visitor fills in the request form", "Request checked and saved", "Email alert with the details", "Reply straight from the alert"],
+  figs=[],
+  team=["No request depends on someone happening to notice an email.",
+        "Every request is kept in one place, with when it arrived and its status.",
+        "Replying takes one click from the alert."],
+  built="Azure Static Web Apps, Azure Functions, Azure Cosmos DB, Azure Communication Services"),
+
  "contracts": dict(
   subtitle="Contracts built from the sales record, not by hand",
   situation=["Customer contracts started from a master Word document. Staff copied it, typed in the customer and job details, and edited the terms as they went. Word's track changes showed some edits, but not all of them were captured, and anyone with access to the master could change it.",
@@ -176,12 +192,12 @@ PAGES = {
 
 CARDS = [c[:6] + (True,) for c in CARDS]
 
-KIND_LABEL = {"real": "Real-world project", "demo": "Demo company"}
-KIND_CLASS = {"real": "tag", "demo": "tag green"}
+KIND_LABEL = {"real": "Real-world project", "demo": "Demo company", "own": "My own business"}
+KIND_CLASS = {"real": "tag", "demo": "tag green", "own": "tag"}
 card_by_slug = {c[0]: c for c in CARDS}
 exec(open(os.path.join(HERE, 'pages2.py')).read())
 
-TOOL_CLASS = {"Power Apps": "t-pp", "Power Automate": "t-pp", "Power BI": "t-bi", "SharePoint": "t-sp", "Dynamics 365": "t-d365"}
+TOOL_CLASS = {"Power Apps": "t-pp", "Power Automate": "t-pp", "Power BI": "t-bi", "SharePoint": "t-sp", "Dynamics 365": "t-d365", "Azure": "t-az"}
 def _tags(tools):
     return "".join(f'<li class="{TOOL_CLASS[x]}">{x}</li>' for x in tools)
 
@@ -221,7 +237,7 @@ index_body = f'''    <div class="page-title">
     <section class="section-white">
       <div class="wrap">
         <div class="note">
-          <p><strong>Real-world projects</strong> were built for, and used at, a working business. <strong>Demo company</strong> projects were built in Lumen Photonics, a sample manufacturer I created in Microsoft 365 to show a complete system end to end. Company names, customers and figures are left out or blurred.</p>
+          <p><strong>Real-world projects</strong> were built for, and used at, a working business. <strong>Demo company</strong> projects were built in Lumen Photonics, a sample manufacturer I created in Microsoft 365 to show a complete system end to end. <strong>My own business</strong> projects run Office Tune-Up Consulting itself. Company names, customers and figures are left out or blurred.</p>
         </div>
         <div class="filter" role="group" aria-labelledby="filter-group-label">
           <p id="filter-group-label" class="filter-label">Filter by problem</p>
